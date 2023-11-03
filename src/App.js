@@ -1,6 +1,6 @@
-import React from 'react';     // React is being used under the hood to convert JSX code
+import React from "react"; // React is being used under the hood to convert JSX code
 import Expenses from "./components/Expenses/Expenses";
-import NewExpense from './components/NewExpense/NewExpense';
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   const expenses = [
@@ -24,9 +24,14 @@ function App() {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = expense =>{
+    console.log(expense);
+  };
+
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
   );
